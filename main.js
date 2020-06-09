@@ -17,8 +17,13 @@ rollButton.addEventListener("click", function () {
             var result = [];
             for (var d1 = 0; d1 < 5;
                 d1++)
-                result.push("&#x268" + Math.floor(Math.random() * 6) + ";" );
-                };
-return result;  
-            }
-        })
+                result.push("&#x268" + Math.floor(Math.random() * 6) + ";");
+        };
+        return result;
+        console.log('The loop is over.')
+        
+
+        }
+    }
+})
+ 
