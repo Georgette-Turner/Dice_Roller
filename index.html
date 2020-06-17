@@ -5,26 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice_Roller</title>
-    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <label for="number-of-dice">Enter a number Dice to Roll</label>
     <input type="text" name="number-of-dice" id="number-of-dice">
     <button id="roll-button"> Roll!</button>
-    <label for="resultRolled">The sum of rolls is</label>
-    <input type="text" name="totalRolled" id="resultRolled">
-    <input type="button" value="show all rolls">
-    <script src="./assets/scripts/main.js"></script>
+    <p>The sum of rolls is <span id="resultRolled"></span></p>
+       <input type="button" id="showAll" value="show all rolls">
 
+
+    <ol id="rollOutput">
+        
+    </ol>
+    <script src="./main.js"></script>
 </body>
-<ol>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ol>
 
 </html>
