@@ -16,8 +16,5 @@ rollButton.addEventListener("click", function () {
         var d1 = Math.floor(Math.random() * 6) + 1;
         console.log(d1)
         counter += 1
-     d1 + total   
-
-        
-        
     }
+rollOutput
