@@ -1,36 +1,43 @@
 const rollButton = document.querySelector('#roll-button')
-const rollNumber = document.querySelector('#number-of-dice')
-const totalSpanElement = document.querySelector('#resultRolled')
-const showAllButton = document.querySelector('#showAll')
+let dieRoll = []
+const total = document.querySelector('#Total-Number-Rolls')
 
-rollButton.addEventListener("click", function () {
-    console.log("roll-button")
-    let numberOfrolls = rollNumber.value
-    console.log(numberOfrolls)
 
-    let counter = 0
-    let total = 0
-    while (counter < numberOfrolls) {
-        var d1 = Math.floor(Math.random() * 6) + 1;
+rollButton.addEventListener("click" , function () {
+    let numberofDice = document.getElementById('number-of-dice').value
+    let numberofRolledDice = numberofDice;
+    console.log(numberofRolledDice)
 
-        rollNumber.push(d1)
-        total = total + (d1)
+    let dice = 0 
+    while (dice < numberofRolledDice) {
+
+        dieRoll.push(Math.floor(Math.random() * 6 +1))
+        dice += 1
     }
-    console.log(d1)
-    counter += 1
+    console.log(dieRoll)
 
-})
-showAllButton.addEventListener("click", function () {
-    console.log("showAllButton")
-    // while statement
-    let counter = 0
-    let total = 0
-    while (counter = 0) counter < rollNumber.length; counter +=
-        1;
+    let sum = dieRoll.reduce(function (a,b){
 
-    let showAllButton = "<li class='dice'>+rollNumber[counter +"/li>''
-    totalSpanElement.innerHTML += listElement
+        return a + b;
+
+    }, 0);
+   console.log(sum)
+   total.innerHTML = "Total Roll "  +sum
+    
 })
 
+let ShowAllRolls = document.getElementById('Show-All-Rolls')
+let allRollsList = document.querySelector('#All-Rolls')
+ShowAllRolls.addEventListener("click", function () {
 
-//  while loop show all button
+    for (let i=0; i < dieRoll.length; i++){
+        allRollsList.innerHTML += "<li class='dice'>" + dieRoll[i] +"</li>"
+    }
+})
+
+const resetButton = document.getElementById('Reset-button')
+resetButton.addEventListener("click", function() {
+    total.innerHTML = ""
+    allRollsList.innerHTML = ""
+    dieRoll = []
+})
